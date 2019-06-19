@@ -11,13 +11,36 @@
 
 # go-diacritics
 
-> A package ...
+> A package to handle diacritics
 
-...
+Provides a method to remove diacritical characters from any string and
+replace them with their ASCII representation.
+
+It handles all cases where an unicode decomposition exists (e.g. ä and è) as
+well as all known latin cases without an unicode decomposition as listed below.
 
 ## Usage
 
-...
+To get the lastest tagged version of package, execute:
+
+```
+go get gopkg.in/Regis24GmbH/go-diacritics.v1
+```
+
+To import this package, add the following line to your code:
+
+```
+import "gopkg.in/Regis24GmbH/go-diacritics.v1"
+```
+
+This is a code example:
+
+```
+func main() {
+  noDiacrits := godiacritics.Normalize("än éᶍample")
+  println(noDiacrits) // prints "an example"
+}
+``` 
 
 ***
 
