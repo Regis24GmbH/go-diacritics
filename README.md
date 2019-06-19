@@ -42,6 +42,10 @@ func main() {
 }
 ``` 
 
+## Misc
+
+Special thanks to [@stefanberkner](https://github.com/stefanberkner)
+
 ***
 
 [travis-image]: https://travis-ci.org/Regis24GmbH/go-diacritics.svg?branch=master
