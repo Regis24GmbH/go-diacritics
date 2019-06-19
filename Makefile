@@ -37,7 +37,7 @@ report: coverage ## Open the coverage report in browser
 	@go tool cover -html=coverage.out
 
 .PHONY: clean
-clean: ## Remove binaries and ZIP files based on directory `./cmd/`
+clean: ## Remove files around coverage report
 	@rm -f coverage.out
 	@rm -rf coverage/
 
