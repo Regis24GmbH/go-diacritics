@@ -1,6 +1,8 @@
 [![Build Status][travis-image]][travis-url]
 [![Github Tag][githubtag-image]][githubtag-url]
 
+[![Coverage Status][coveralls-image]][coveralls-url]
+
 [![Go Report Card][goreport-image]][goreport-url]
 [![GoDoc][godoc-image]][godoc-url]
 [![License][license-image]][license-url]
@@ -24,6 +26,9 @@
 
 [githubtag-image]: https://img.shields.io/github/tag/Regis24GmbH/go-diacritics.svg?style=flat
 [githubtag-url]: https://github.com/Regis24GmbH/go-diacritics
+
+[coveralls-image]: https://coveralls.io/repos/github/Regis24GmbH/go-diacritics/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/Regis24GmbH/go-diacritics?branch=master
 
 [goreport-image]: https://goreportcard.com/badge/github.com/Regis24GmbH/go-diacritics
 [goreport-url]: https://goreportcard.com/report/github.com/Regis24GmbH/go-diacritics
