@@ -2,7 +2,7 @@
 
 LIST_ALL := $(shell go list ./... | grep -v /vendor/ | grep -v mocks)
 
-all: lint test race build
+all: lint test race
 
 .PHONY: install
 install: ## Install the dependencies (via dep)
