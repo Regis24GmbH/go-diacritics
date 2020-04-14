@@ -25,13 +25,13 @@ well as all known latin cases without an unicode decomposition as listed below.
 To get the lastest tagged version of package, execute:
 
 ```
-go get github.com/Regis24GmbH/go-diacritics
+go get gopkg.in/Regis24GmbH/go-diacritics.v2
 ```
 
 To import this package, add the following line to your code:
 
 ```
-import "github.com/Regis24GmbH/go-diacritics"
+import "gopkg.in/Regis24GmbH/go-diacritics.v2"
 ```
 
 This is a code example:
