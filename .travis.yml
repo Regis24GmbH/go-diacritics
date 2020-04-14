@@ -8,9 +8,10 @@ go:
   - 1.14.x
 
 before_script:
-  - GOFLAGS='' go get -u golang.org/x/lint/golint
-  - GOFLAGS='' go get golang.org/x/tools/cmd/cover
-  - GOFLAGS='' go get github.com/mattn/goveralls
+  - go get -u golang.org/x/lint/golint
+  - go get golang.org/x/tools/cmd/cover
+  - go get github.com/mattn/goveralls
+  - go mod vendor
 
 script:
   - make lint
