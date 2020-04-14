@@ -1,47 +1,26 @@
-# GO - all golang related commands -------------------------------------------------------------------------------------
+.PHONY: lint test race coverage upgrade help
 
 LIST_ALL := $(shell go list ./... | grep -v /vendor/ | grep -v mocks)
 
-all: lint test race
+export GOFLAGS=-mod=vendor
 
-.PHONY: install
-install: ## Install the dependencies (via dep)
-	@dep ensure
-
-.PHONY: update
-update: ## Update the dependencies (via dep)
-	@dep ensure -update
-
-.PHONY: lint
 lint: ## Lint all files (via golint)
-	@go fmt ${LIST_ALL}
 	@golint -set_exit_status ${LIST_ALL}
 
-.PHONY: test
-test: install ## Run unit tests
-	@go test -short ${LIST_ALL}
+test: ## Run unittests
+	@go test -short -count 1 -v ./...
 
-.PHONY: race
-race: install ## Run data race detector
-	@go test -race -short ${LIST_ALL}
+race: ## Run data race detector
+	@go test -race -short -count 1 -v ./...
 
-.PHONY: coverage
-coverage: install ## Generate coverage report
-	@go test ${LIST_ALL} -coverprofile coverage.out
-	@go tool cover -func coverage.out
-	@mkdir -p coverage
-	@go tool cover -html=coverage.out -o coverage/index.html
+coverage: ## Generate test coverage
+	@go test -coverprofile coverage.txt ./...
+	@go tool cover -func=coverage.txt
 
-.PHONY: report
-report: coverage ## Open the coverage report in browser
-	@go tool cover -html=coverage.out
-
-.PHONY: clean
-clean: ## Remove files around coverage report
-	@rm -f coverage.out
-	@rm -rf coverage/
-
-# ----------------------------------------------------------------------------------------------------------------------
+upgrade: ## Upgrade go dependencies
+	@GOFLAGS='' go get -u -t ./...
+	@go mod tidy
+	@go mod vendor
 
 .PHONY: help
 help: ## Display this help screen
