@@ -1,4 +1,4 @@
-module github.com/Regis24GmbH/go-diacritics
+module gopkg.in/Regis24GmbH/go-diacritics.v2
 
 go 1.14
 
