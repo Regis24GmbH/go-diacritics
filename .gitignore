@@ -13,5 +13,4 @@
 
 # own stuff
 coverage
-vendor
 coverage.*
