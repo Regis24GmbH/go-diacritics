@@ -9,13 +9,6 @@ import (
 	"golang.org/x/text/unicode/norm"
 )
 
-var transformChain = transform.Chain(
-	runes.Map(mapDecomposeUnavailable),
-	norm.NFD,
-	runes.Remove(runes.In(unicode.Mn)),
-	norm.NFC,
-)
-
 var unavailableMapping = map[rune]rune{
 	'\u0181': 'B',
 	'\u1d81': 'd',
@@ -193,6 +186,13 @@ var unavailableMapping = map[rune]rune{
 
 // Normalize removes diacritical characters and replaces them with their ASCII representation
 func Normalize(input string) string {
+	var transformChain = transform.Chain(
+		runes.Map(mapDecomposeUnavailable),
+		norm.NFD,
+		runes.Remove(runes.In(unicode.Mn)),
+		norm.NFC,
+	)
+
 	input = strings.Replace(input, "\u00df", "ss", -1) // ß to ss handling
 	result, _, _ := transform.String(transformChain, input)
 	return result

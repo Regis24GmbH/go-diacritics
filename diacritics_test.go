@@ -1,6 +1,7 @@
 package godiacritics
 
 import (
+	"sync"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -26,4 +27,20 @@ func TestRemoval(t *testing.T) {
 			assert.Equal(t, c.expected, actual)
 		})
 	}
+}
+
+func TestRemovalParallel(t *testing.T) {
+	wg := sync.WaitGroup{}
+
+	for i := 0; i < 1000; i++ {
+		wg.Add(1)
+
+		go func() {
+			actual := Normalize("Ä möre ȼꝋmpleᶍ ⱸxamplé")
+			assert.Equal(t, "A more complex example", actual)
+			wg.Done()
+		}()
+	}
+
+	wg.Wait()
 }

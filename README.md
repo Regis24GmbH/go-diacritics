@@ -25,13 +25,13 @@ well as all known latin cases without an unicode decomposition as listed below.
 To get the lastest tagged version of package, execute:
 
 ```
-go get gopkg.in/Regis24GmbH/go-diacritics.v1
+go get github.com/Regis24GmbH/go-diacritics
 ```
 
 To import this package, add the following line to your code:
 
 ```
-import "gopkg.in/Regis24GmbH/go-diacritics.v1"
+import "github.com/Regis24GmbH/go-diacritics"
 ```
 
 This is a code example:
@@ -41,11 +41,7 @@ func main() {
   noDiacrits := godiacritics.Normalize("än éᶍample")
   println(noDiacrits) // prints "an example"
 }
-``` 
-
-## Misc
-
-Special thanks to [@stefanberkner](https://github.com/stefanberkner)
+```
 
 ***
 
