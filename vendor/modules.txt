@@ -1,16 +1,14 @@
 # github.com/davecgh/go-spew v1.1.1
-## explicit
 github.com/davecgh/go-spew/spew
 # github.com/pmezard/go-difflib v1.0.0
 github.com/pmezard/go-difflib/difflib
-# github.com/stretchr/testify v1.7.0
+# github.com/stretchr/testify v1.8.1
 ## explicit
 github.com/stretchr/testify/assert
-# golang.org/x/text v0.3.6
+# golang.org/x/text v0.7.0
 ## explicit
 golang.org/x/text/runes
 golang.org/x/text/transform
 golang.org/x/text/unicode/norm
-# gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
-## explicit
+# gopkg.in/yaml.v3 v3.0.1
 gopkg.in/yaml.v3
